@@ -1,0 +1,6 @@
+export { default as Header } from './Header'
+export { default as Tables } from './Tables'
+export { default as Loader } from './Loader'
+export { default as Pagination } from './Pagination'
+export { default as SelectOptions } from './SelectOptions'
+export { default as Footer } from './Footer'
