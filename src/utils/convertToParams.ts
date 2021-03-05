@@ -1,0 +1,1 @@
+export const toParams = (params: any) => new URLSearchParams(params).toString()

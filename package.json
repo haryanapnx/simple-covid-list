@@ -45,5 +45,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/history": "^4.7.8",
+    "@types/node-sass": "^4.11.1",
+    "@types/react-redux": "^7.1.16",
+    "@types/react-router-dom": "^5.1.7",
+    "node-sass": "^5.0.0"
   }
 }
