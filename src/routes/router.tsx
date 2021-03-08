@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch, withRouter } from 'react-router-dom'
-import { Home, CountryDetail } from './containers'
-import { Header, Footer } from './components'
+import { Home, CountryDetail } from '../containers'
+import { Header, Footer } from '../components'
 
 const Routes: React.FC = () => (
   <React.Fragment>

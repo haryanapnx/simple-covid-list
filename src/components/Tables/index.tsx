@@ -25,15 +25,6 @@ const Tables: React.FC<TableTypes> = ({ headers, values, keys }) => {
           columns.push(item[key.id])
           break;
       }
-      // if (key.type === 'link') {
-      //   columns.push((
-      //     <Link to={key.url}>{item[key.id]}</Link>
-      //   ))
-      // } else if() {
-      //   columns.push(item[key.id])
-      // } else {
-      //   columns.push(item[key.id])
-      // }
     });
     return columns;
   }

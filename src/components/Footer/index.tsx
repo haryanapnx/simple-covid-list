@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import './footer.scss'
 
-const Footer = () => (
+const Footer: React.FC = () => (
   <>
     <footer className="footer">
       <p>Allrights Reserved @ 2021</p>

@@ -11,4 +11,5 @@ const store = createStore(rootReducer, compose(
   applyMiddleware(thunk),
   typeof devToolsExtension === 'function' ? devToolsExtension : (f: any) => f
 ));
+
 export { store, history };

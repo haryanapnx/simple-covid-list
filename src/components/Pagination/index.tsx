@@ -2,7 +2,13 @@
 import React, { useEffect, useState } from "react";
 import { Pagination } from 'react-bootstrap'
 
-function PaginationComponent(props: any) {
+interface PaginationTypes {
+  data: any[]
+  limit: number
+  onItem: (item: any[]) => void
+}
+
+const PaginationComponent: React.FC<PaginationTypes> = ({ data, limit, onItems }) => {
 
   const [currentPage, setcurrentPage] = useState(1);
   const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(5);
@@ -12,20 +18,20 @@ function PaginationComponent(props: any) {
   const handleClick = (e: any) => setcurrentPage(Number(e.target.id));
 
   const pages = [];
-  for (let i = 1; i <= Math.ceil(props.data.length / props.limit); i++) {
+  for (let i = 1; i <= Math.ceil(data.length / limit); i++) {
     pages.push(i);
   }
 
-  const indexOfLastItem = currentPage * props.limit;
-  const indexOfFirstItem = indexOfLastItem - props.limit;
-  const currentItems = props.data.slice(indexOfFirstItem, indexOfLastItem);
+  const indexOfLastItem = currentPage * limit;
+  const indexOfFirstItem = indexOfLastItem - limit;
+  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
 
   useEffect(() => {
     handleItems()
-  }, [currentPage, props.data]);
+  }, [currentPage, data]);
 
-  const handleItems = () =>  props.onItems(currentItems)
+  const handleItems = () => onItems(currentItems)
 
   const handleNextbtn = () => {
     setcurrentPage(currentPage + 1);
@@ -75,7 +81,7 @@ function PaginationComponent(props: any) {
         {renderPageNumbers}
         {pageIncrementBtn}
       </Pagination>
-      <b className="ml-5">{props.data.length} </b> / Total data
+      <b className="ml-5">{data.length} </b> / Total data
     </div>
   );
 }

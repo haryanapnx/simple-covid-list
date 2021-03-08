@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { Container, Jumbotron, Button, Row, Col } from "react-bootstrap";
 import "./header.scss";
 
-const Header = () => {
+const Header: React.FC = () => {
   const history = useHistory()
   const toHome = () => {
     window.scrollTo(0, 0);
